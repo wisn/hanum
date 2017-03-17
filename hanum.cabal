@@ -1,5 +1,5 @@
 name:                hanum
-version:             0.0.1.0
+version:             0.0.0.1
 -- synopsis:
 -- description:
 homepage:            https://github.com/wisn/hanum
@@ -16,7 +16,16 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
+  default-extensions:  RecordWildCards
+                     , DeriveGeneric
+                     , OverloadedStrings
   build-depends:       base >= 4.7 && < 5
+                     , aeson
+                     , bytestring
+                     , containers
+                     , directory
+                     , filepath
+                     , split
   default-language:    Haskell2010
 
 executable hanum
