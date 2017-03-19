@@ -8,7 +8,7 @@ Education: Informatics Engineering '16 at Telkom University
 
 Contact: <wisnu@nurcahyo.me>
 
-GitHub: <github.com/wisn>
+GitHub: <https://github.com/wisn/>
 
 ## Summary
 Create a dynamic linter for the OSM attributes.
