@@ -249,7 +249,7 @@ versionAttribute :: String
 versionAttribute = "alpha"
 
 releaseDate :: String
-releaseDate = "January 20, 2017"
+releaseDate = "-"
 
 commands :: [(String, String)]
 commands =
@@ -264,8 +264,8 @@ help = [ "Usage: hanum PATH [PRESET]"
        , (unlines . extract) commands]
 
 about :: [String]
-about = [ "OSMNLint version " ++ versionFull
+about = [ "Hanum version " ++ versionFull
         , "Released at " ++ releaseDate ]
 
 appVersion :: [String]
-appVersion = ["OSMNLint " ++ versionFull]
+appVersion = ["Hanum " ++ versionFull]

@@ -1,0 +1,6 @@
+{
+  "presets": {
+    "short_name": "dontSameWith name",
+    "address": "required"
+  }
+}
