@@ -2,15 +2,20 @@
 An OpenStreetMap attributes linter with custom presets.
 
 ## Introduction
-Name: Wisnu Adi Nurcahyo
-
-Education: Informatics Engineering '16 at Telkom University
-
-Contact: <wisnu@nurcahyo.me>
-
-GitHub: <https://github.com/wisn/>
-
-Proposal Status: **Draft**
+- **Name**: Wisnu Adi Nurcahyo
+- **OSM Account**: [Wisnu Adi Nurcahyo](https://www.openstreetmap.org/user/Wisnu%20Adi%20Nurcahyo)
+- **OSM Wiki Account**: [Wisnu](https://wiki.openstreetmap.org/wiki/User:Wisnu)
+- **Age**: 18 years old
+- **Education**: Informatics Engineering '16 at Telkom University
+- **Contact**: <wisnu@nurcahyo.me>
+- **GitHub**: [github.com/wisn](https://github.com/wisn/)
+- **Website**: [nurcahyo.me](https://www.nurcahyo.me/)
+- **Medium**: [medium.com/@Nurcahyo](https://medium.com/@Nurcahyo)
+- **Known Computer Languages**: Haskell (8), PHP (7), Ruby (7), Python (3), C++ (3), Elm (1)
+- **Technical Skills**: Software Engineering, Agile Software Development
+- **Hobbies**: Programming, reading, writing, listening music, futsal, table tennis
+- **Interests**: Functional Programming, Graph Model Database, Algorithms
+- **Proposal Status**: Draft
 
 ## Summary
 Create a dynamic linter for the OSM attributes.
