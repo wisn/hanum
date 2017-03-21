@@ -10,6 +10,8 @@ Contact: <wisnu@nurcahyo.me>
 
 GitHub: <https://github.com/wisn/>
 
+Proposal Status: **Draft**
+
 ## Summary
 Create a dynamic linter for the OSM attributes.
 This Linter will check and evaluate the attribute validity.
