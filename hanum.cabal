@@ -3,7 +3,7 @@ version:             0.1.0.0
 -- synopsis:
 -- description:
 homepage:            https://github.com/wisn/hanum#readme
-license:             BSD3
+license:             MIT
 license-file:        LICENSE
 author:              Wisnu Adi Nurcahyo
 maintainer:          wisnu@nurcahyo.me
