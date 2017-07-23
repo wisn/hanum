@@ -1,6 +1,7 @@
 module Main where
 
-import Lib
+import qualified CLI as CLI
+import qualified Overpass as Overpass
 
 main :: IO ()
-main = someFunc
+main = (CLI.display. CLI.getMessage) ["app.version"]
