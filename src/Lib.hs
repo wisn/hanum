@@ -3,6 +3,7 @@ module Lib where
 {-# LANGUAGE DeriveGeneric, OverloadedStrings, RecordWildCards #-}
 
 import Data.Aeson (decode, FromJSON, parseJSON, withObject, (.:))
+import Data.Char (isLower)
 import Data.List.Split (splitOn)
 import GHC.Generics (Generic)
 import System.Directory (getCurrentDirectory, doesFileExist)
@@ -111,9 +112,10 @@ runLinter rules attrs = runPresets rules attrs 0
             then do
               let ruleTest =
                     case ruleFn' of
-                      "required"     -> lintRequired ruleKey attr
-                      "dontSameWith" -> lintDontSameWith ruleKey ruleFn attr
-                      otherwise      -> (True, [])
+                      "required"        -> lintRequired ruleKey attr
+                      "shouldLowercase" -> lintShouldLowercase ruleKey attr
+                      "dontSameWith"    -> lintDontSameWith ruleKey ruleFn attr
+                      otherwise         -> (True, [])
 
                   testResult = fst ruleTest
                   testMsg    = snd ruleTest
@@ -181,7 +183,7 @@ run args = do
 
   if (null path)
     then (putStrLn . showError) "It's not both a command nor a file!"
-    else if (extension /= ".json")
+    else if (extension /= ".json" && extension /= ".geojson")
             then do
               (putStrLn . showError) "It's not a JSON file!"
               exitFailure
@@ -232,6 +234,16 @@ lintDontSameWith key key' tags =
               then (True, [])
               else ( False
               , showError $ "The \"" ++ key ++ "\" is same with \"" ++ getKey ++ "\"!")
+
+lintShouldLowercase :: String -> (Map.Map String String) -> (Bool, String)
+lintShouldLowercase key tags =
+  let content = Map.lookup key tags
+  in case content of
+    Nothing -> (True, [])
+    Just v  -> if (all isLower v)
+      then (True, [])
+      else ( False
+           , showError $ "The \"" ++ key ++ "\" should be lowercase!")
 
 versionFull :: String
 versionFull = "0.0.1-alpha"
