@@ -95,6 +95,8 @@ Since currently we are didn't have any default presets, we can't lint it.
 This library written in Haskell with The Haskell Tool Stack.
 Below is an installation and demo for the UNIX-like operating system.
 
+Make sure you have [Haskell Tool Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/) installed on your system before running these commands.
+
 ```
 $ git clone https://github.com/wisn/hanum.git
 $ cd hanum
