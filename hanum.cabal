@@ -7,7 +7,7 @@ license:             MIT
 license-file:        LICENSE
 author:              Wisnu Adi Nurcahyo
 maintainer:          nurcahyo@protonmail.com
-copyright:           'Copyright: (c) 2017, Wisnu Adi Nurcahyo'
+copyright:           '(c) 2017, Wisnu Adi Nurcahyo'
 category:            Static Analysis
 build-type:          Simple
 extra-source-files:  README.md
@@ -15,8 +15,8 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     CLI
-                     , Overpass
+  exposed-modules:     Hanum
+                     , Hanum.CLI
   build-depends:       base >= 4.7 && < 5
   default-language:    Haskell2010
 

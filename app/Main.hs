@@ -1,7 +1,6 @@
 module Main where
 
-import qualified CLI as CLI
-import qualified Overpass as Overpass
+import qualified Hanum as Hanum
 
 main :: IO ()
-main = (CLI.display. CLI.getMessage) ["app.version"]
+main = Hanum.run =<< Hanum.getArgs
