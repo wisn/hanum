@@ -3,4 +3,4 @@ module Main where
 import qualified Hanum as Hanum
 
 main :: IO ()
-main = Hanum.run =<< Hanum.getArgs
+main = Hanum.debug -- =<< Hanum.getArgs
