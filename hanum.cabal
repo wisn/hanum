@@ -1,31 +1,26 @@
 name:                hanum
-version:             0.0.0.1
--- synopsis:
--- description:
-homepage:            https://github.com/wisn/hanum
-license:             BSD3
+version:             0.1.0.0
+synopsis:            An OpenStreetMap attributes linter with custom presets.
+description:         An OpenStreetMap attributes linter with custom presets.
+homepage:            https://github.com/wisn/hanum#readme
+license:             MIT
 license-file:        LICENSE
 author:              Wisnu Adi Nurcahyo
-maintainer:          wisnu@nurcahyo.me
-copyright:           2017 Wisnu Adi Nurcahyo
-category:            Linter
+maintainer:          nurcahyo@protonmail.com
+copyright:           '(c) 2017, Wisnu Adi Nurcahyo'
+category:            Static Analysis
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
-  default-extensions:  RecordWildCards
-                     , DeriveGeneric
-                     , OverloadedStrings
+  exposed-modules:     Hanum
+                     , Hanum.Arguments
+                     , Hanum.CLI
   build-depends:       base >= 4.7 && < 5
-                     , aeson
-                     , bytestring
-                     , containers
-                     , directory
-                     , filepath
-                     , split
+                     , containers == 0.5.7.1
+                     , filepath == 1.4.1.1
   default-language:    Haskell2010
 
 executable hanum
