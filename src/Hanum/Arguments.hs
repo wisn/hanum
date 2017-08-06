@@ -49,12 +49,12 @@ specialSingleOptions = Map.fromList
                      ]
 
 availableOptions :: Options
-availableOptions =
-  Map.union spcl $ Map.fromList [ ("o", [])
-                                , ("output", [])
-                                , ("p", [])
-                                , ("persets", [])
-                                ]
+availableOptions = Map.union spcl $
+  Map.fromList [ ("o", [])
+               , ("output", [])
+               , ("p", [])
+               , ("persets", [])
+               ]
   where
   spcl = specialSingleOptions
 
@@ -211,25 +211,25 @@ getOptions k v
 getOptionsKey :: String -> String
 getOptionsKey [] = []
 getOptionsKey input
-  | isShortOptions input = evaluate (saveTail input) []
-  | isLongOptions  input = evaluate ((saveTail. saveTail) input) []
+  | isShortOptions input = evaluate (safeTail input) []
+  | isLongOptions  input = evaluate ((safeTail. safeTail) input) []
   where
-  saveTail :: String -> String
-  saveTail [] = []
-  saveTail xs = tail xs
+  safeTail :: String -> String
+  safeTail [] = []
+  safeTail xs = tail xs
   evaluate :: String -> String -> String
   evaluate []     res = res
   evaluate (x:xs) res
     | x == '='  = evaluate [] res
     | otherwise = evaluate xs (res ++ [x])
 
-saveHead :: [String] -> String
-saveHead [] = []
-saveHead xs = head xs
+safeHead :: [String] -> String
+safeHead [] = []
+safeHead xs = head xs
 
-saveTail :: [String] -> [String]
-saveTail [] = []
-saveTail xs = tail xs
+safeTail :: [String] -> [String]
+safeTail [] = []
+safeTail xs = tail xs
 
 getUserArguments :: [String] -> (Options, [String])
 getUserArguments []    = (Map.empty, [])
@@ -244,9 +244,9 @@ getUserArguments input = evaluate input Map.empty []
         then evaluate xs (combineOptions opts x []) args
         else if Map.member key sOpts
           then evaluate xs (Map.union opts (Map.fromList [(key, [])])) args
-          else if (isOptions (saveHead xs)) || elem '=' x
+          else if (isOptions (safeHead xs)) || elem '=' x
             then evaluate xs (combineOptions opts x []) args
-            else evaluate (saveTail xs) (combineOptions opts x xs) args
+            else evaluate (safeTail xs) (combineOptions opts x xs) args
     | otherwise = evaluate xs opts (args ++ [x])
     where
     sOpts = specialSingleOptions
