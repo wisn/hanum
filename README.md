@@ -10,6 +10,8 @@ instead of Haskell Platform.
 ## Installation
 For now, this program only support a manual installation.
 
+Make sure you have [Haskell Tool Stack](https://docs.haskellstack.org/en/stable/install_and_upgrade/) installed on your system before running these commands.
+
 ```
 $ git clone https://github.com/wisn/hanum.git
 $ cd hanum
